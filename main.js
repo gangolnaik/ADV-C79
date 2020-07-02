@@ -4,6 +4,7 @@
     function getmenu(){
         var htmldata;
         htmldata="<ol class='menulist'>"
+        menu_list_array.sort();
         for(var i=0;i<menu_list_array.length;i++){
             //document.getElementById('display_menu').innerHTML ='<li>' + menu_list_array[i] + '</li>'
             htmldata=htmldata+'<li>' + menu_list_array[i] + '</li>'
@@ -15,11 +16,22 @@
     function add_item(){
         var item=document.getElementById("add_item").value;
         menu_list_array.push(item);
+        menu_list_array.sort();
         // console.log(menu_list_array);
 
         // document.getElementById("add_item").style.display = "";
         document.getElementById("display_addedmenu").innerHTML = menu_list_array;
-        document.getElementById("sortbtn").style.display = "inline-block";
+       // document.getElementById("sortbtn").style.display = "inline-block";
+
+        htmldata="<ol class='menulist'>"
+        menu_list_array.sort();
+        for(var i=0;i<menu_list_array.length;i++){
+            //document.getElementById('display_menu').innerHTML ='<li>' + menu_list_array[i] + '</li>'
+            htmldata=htmldata+'<li>' + menu_list_array[i] + '</li>'
+        //    document.getElementById("display_menu").innerHTML = menu_list_array[i];
+        }
+         htmldata=htmldata+"</ol>"
+          document.getElementById("display_addedmenu").innerHTML = htmldata;
     }
 
 function sorting()
