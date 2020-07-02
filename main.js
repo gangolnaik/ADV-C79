@@ -1,12 +1,16 @@
 
-	menu_list_array = ["Chicken Tandoori","Veg Supreme Burger","Paneer Tikka","Chicken Chilli","Cheese Burst Pizza"];
+	menu_list_array = ["Chicken Tandoori Pizza","Veg Supreme Burger","Paneer Tikka Pizza","Chicken Chilli Pizza","Cheese Burst Pizza"];
     
     function getmenu(){
-        // for(var i=0;i<menu_list_array.length;i++){
-        //     document.getElementById('display_menu').innerHTML ='<li>' + menu_list_array[i] + '</li>'
-        // //    document.getElementById("display_menu").innerHTML = menu_list_array[i];
-        // }
-         document.getElementById("display_menu").innerHTML = menu_list_array;
+        var htmldata;
+        htmldata="<ol class='menulist'>"
+        for(var i=0;i<menu_list_array.length;i++){
+            //document.getElementById('display_menu').innerHTML ='<li>' + menu_list_array[i] + '</li>'
+            htmldata=htmldata+'<li>' + menu_list_array[i] + '</li>'
+        //    document.getElementById("display_menu").innerHTML = menu_list_array[i];
+        }
+         htmldata=htmldata+"</ol>"
+         document.getElementById("display_menu").innerHTML = htmldata;
     }
     function add_item(){
         var item=document.getElementById("add_item").value;

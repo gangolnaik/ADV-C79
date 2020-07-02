@@ -134,3 +134,11 @@ body{
 	margin-top: 20px; 
 	margin-bottom: 20px; 
 }
+ol.menulist
+{
+
+}
+ol.menulist>li
+{
+	padding-bottom:20px;
+}
